@@ -31,4 +31,28 @@ Keyword Matching: Python’s re, or flashtext for efficient keyword search
 
 Timestamp Handling: If timestamps are included in JSON or CSV, use pandas to compute time gaps
 
+For Whisper Note Accureacy, following are some realistic means of calculation:
 
+🔹 Keyword or Phrase Overlap
+Method: Use TF-IDF or bag-of-words models to detect if the same key concepts appear in both.
+
+Useful for: Call center contexts (e.g., “close account”, “credit card limit”).
+
+Tool: sklearn.feature_extraction.text.TfidfVectorizer
+
+🔹 Semantic Similarity (Embeddings)
+Method: Convert both the whisper note and transcript excerpt into embeddings using:
+
+Sentence-BERT
+
+OpenAI embeddings
+
+Universal Sentence Encoder
+
+Compute cosine similarity between them.
+
+Pros: Captures true paraphrasing.
+
+Threshold: Typically 0.75–0.85.
+
+Example Tools: sentence-transformers, openai, tensorflow-hub
